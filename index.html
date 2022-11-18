@@ -50,9 +50,12 @@
         Create a conditional statement that logs "This is true" in the console
         Hint: Use the equal operator ==
         Edit the condition to change the output to "This is not true" */
-
-
-
+        let a = true;
+        if (a == true) {
+            console.log("This is true")
+        } else {
+            console.log("This is not true")
+        }
 
         //Exercise 2
         /* Create a variable and assign it to your best friend's name
@@ -62,19 +65,25 @@
         Edit the condition to change the output to "Hello world!"
         Hint: use the not equal operator != 
         */
-
+        let b = 'rick';
+        if (b != 'rick') {
+            console.log("Hello World")
+        } else {
+            console.log("Hello World!")
+        }
       
-
         //Exercise 3
         //Select the input tag by its id and assign is variable with const keyword
-      
+        
+        const l = document.querySelector('#barometer');
 
         function changeWeather(evt) {
             evt.preventDefault();
             //Exercise 4
             //Get the value of the input using its variable name and the value property
             //Log its value in the console
-       
+            let val = l.value;
+            console.log(val);
 
             /* Exercise 6
             Create an if statement to show the sun at pressures over 30
@@ -93,15 +102,24 @@
             Make it rain and play the thunderstorm audio
             select the audio tag by its id and run the play() method on it
             */
+            if (val >= 30) {
+                sunny();
+            } else if (val >= 29 && val < 30) {
+                addClouds();
+            } else if (val >= 28 && val < 29) {
+                addRainClouds();
+            } else {
+                makeRain();
+            }
 
-          
+            document.querySelector('#storm').play();
         }
 
         //Exercise 5
         /*Add an event listener for the input object using its variable name
         and have it call the changeWeather function on the 'change' event */
 
-
+        l.addEventListener('change', changeWeather);
 
 
     </script>
